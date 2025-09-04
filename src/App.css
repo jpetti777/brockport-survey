@@ -441,7 +441,8 @@
   }
 
   .sticky-header h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    padding-top: 0.75rem;
   }
 
   .budget-container {
@@ -462,7 +463,8 @@
   }
 
   .instructions-page h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    padding-top: 0.75rem;
   }
 
   .project-card {
@@ -484,11 +486,26 @@
   .projects-list {
     padding: 0 0.5rem;
   }
+
+  .fund-checkbox {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .fund-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .fund-checkbox label {
+    font-size: 0.9rem;
+    line-height: 16px;
+  }
 }
 
 @media (max-width: 480px) {
   .sticky-header h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
   }
 
   .budget-info {
@@ -503,11 +520,27 @@
   }
 
   .instructions-page h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    padding-top: 0.5rem;
   }
 
   .next-button, .submit-button, .previous-button {
     font-size: 0.95rem;
     padding: 10px 20px;
+  }
+
+  .fund-checkbox {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .fund-checkbox input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+  }
+
+  .fund-checkbox label {
+    font-size: 0.85rem;
+    line-height: 15px;
   }
 }
