@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phelps NY Forward Project Funding Survey</title>
+    <meta name="description" content="Help decide which NY Forward projects should receive funding in downtown Phelps, NY. Allocate $4,500,000 across 15 proposed revitalization projects." />
+    <meta name="keywords" content="Phelps NY, NY Forward, downtown revitalization, community survey, project funding" />
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Phelps NY Forward Project Funding Survey" />
+    <meta property="og:description" content="Help decide which NY Forward projects should receive funding in downtown Phelps, NY" />
+    <meta property="og:type" content="website" />
+
+    <!-- Prevent search engine indexing during survey period -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <style>
+      /* Loading spinner styles */
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: system-ui, sans-serif;
+      }
+
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 2s linear infinite;
+        margin-right: 1rem;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading state while React loads -->
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <div>Loading Phelps NY Forward Survey...</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
