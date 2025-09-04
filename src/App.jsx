@@ -26,9 +26,10 @@ const projects = [
 
 function App() {
   const [selectedProjects, setSelectedProjects] = useState([]);
-  const [remainingBudget, setRemainingBudget] = useState(6400000);
+  const [remainingBudget, setRemainingBudget] = useState(4500000);
   const [comments, setComments] = useState({});
   const [showInstructions, setShowInstructions] = useState(true);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -36,7 +37,7 @@ function App() {
 
   useEffect(() => {
     const totalCost = selectedProjects.reduce((sum, id) => sum + projects.find(p => p.id === id).cost, 0);
-    setRemainingBudget(6400000 - totalCost);
+    setRemainingBudget(4500000 - totalCost);
   }, [selectedProjects]);
 
   const handleProjectToggle = (projectId) => {
@@ -55,7 +56,7 @@ function App() {
   };
 
   const getProgressBarStyle = () => {
-    const percentage = ((6400000 - remainingBudget) / 6400000) * 100;
+    const percentage = ((4500000 - remainingBudget) / 4500000) * 100;
     return {
       width: `${percentage}%`,
       backgroundColor: remainingBudget >= 0 ? '#4CAF50' : '#F44336',
@@ -100,8 +101,9 @@ function App() {
         },
       });
       console.log('Survey submission response:', response.data);
-      alert('Survey submitted successfully!');
-      setIsSubmitted(true); // Set the submitted state to true
+      setIsSubmitted(true);
+      setShowSuccess(true);
+      scrollToTop();
     } catch (error) {
       console.error('Error submitting survey:', error);
       if (error.response) {
@@ -117,14 +119,27 @@ function App() {
     }
   };
 
-      return (
-        <div className="App">
+  return (
+    <div className="App">
+      {showSuccess ? (
+        <div className="success-page">
+          <div className="success-content">
+            <h1>Thank You!</h1>
+            <div className="success-checkmark">✓</div>
+            <h2>Your survey has been submitted successfully</h2>
+            <p>Your responses will be shared with the Local Planning Committee to help guide their decisions about which projects to recommend for funding.</p>
+            <p>The next meeting of the Local Planning Committee is scheduled for mid-October at the Phelps Village Hall. This meeting is open to the public and there will be time reserved at the end for public comments.</p>
+            <p><strong>You may now close this page.</strong></p>
+          </div>
+        </div>
+      ) : (
+        <>
           {!showInstructions && (
             <header className="sticky-header">
               <h1>Phelps NY Forward Project Funding Survey</h1>
               <div className="budget-container">
                 <div className="budget-info">
-                  <span><strong>Total Budget:</strong> ${(6400000).toLocaleString()}</span>
+                  <span><strong>Total Budget:</strong> ${(4500000).toLocaleString()}</span>
                   <span><strong>Remaining:</strong> ${remainingBudget.toLocaleString()}</span>
                 </div>
                 <div className="progress-container">
@@ -135,24 +150,14 @@ function App() {
                 <button 
                   className={`submit-button ${isSubmitted ? 'submitted' : ''}`}
                   onClick={handleSubmit} 
-                  disabled={remainingBudget < 0 || selectedProjects.length === 0 || isSubmitted}
+                  disabled={remainingBudget < 0 || isSubmitted}
                 >
                   {isSubmitted ? 'Submitted' : 'Submit'}
                 </button>
               </div>
               {remainingBudget < 0 && (
                 <div className="error-message">
-                  You have exceeded the $6,400,000 budget. Please deselect some projects.
-                </div>
-              )}
-              {selectedProjects.length === 0 && !isSubmitted && (
-                <div className="error-message">
-                  Please select at least one project before submitting.
-                </div>
-              )}
-              {isSubmitted && (
-                <div className="success-message">
-                  Thank you for your submission! You may now close this page.
+                  You have exceeded the $4,500,000 budget. Please deselect some projects.
                 </div>
               )}
             </header>
@@ -201,48 +206,47 @@ function App() {
                 {emailError && <p className="email-error">{emailError}</p>}
               </div>
             ) : (
-          <div className="projects-list">
-            {projects.map((project, index) => (
-              <div key={project.id} className={`project-card ${selectedProjects.includes(project.id) ? 'selected' : ''}`}>
-                <div className="project-image">
-                  <img src={project.imagePath} alt={project.name} />
-                </div>
-                <div className="project-content">
-                  <p className="project-number">Project {index + 1} of 15</p>
-                  <h3>{project.name}</h3>
-                  <p className="project-location">{project.location}</p>
-                  <p className="project-description">{project.description}</p>
-                  <p className="project-total-cost">Total Project Cost: ${project.totalCost.toLocaleString()}</p>
-                  <p className="project-cost"><strong>Funding Request: ${project.cost.toLocaleString()}</strong></p>
-                  <div className="fund-checkbox">
-                    <input
-                      type="checkbox"
-                      id={`fund-${project.id}`}
-                      checked={selectedProjects.includes(project.id)}
-                      onChange={() => handleProjectToggle(project.id)}
-                    />
-                    <label htmlFor={`fund-${project.id}`}>Fund this Project</label>
+              <div className="projects-list">
+                {projects.map((project, index) => (
+                  <div key={project.id} className={`project-card ${selectedProjects.includes(project.id) ? 'selected' : ''}`}>
+                    <div className="project-image">
+                      <img src={project.imagePath} alt={project.name} />
+                    </div>
+                    <div className="project-content">
+                      <p className="project-number">Project {index + 1} of 15</p>
+                      <h3>{project.name}</h3>
+                      <p className="project-description"><strong>Description:</strong> {project.description}</p>
+                      <p className="project-cost"><strong>Funding Request: ${project.cost.toLocaleString()}</strong></p>
+                      <p className="project-total-cost">Total Project Cost: ${project.totalCost.toLocaleString()}</p>
+                      <div className="fund-checkbox">
+                        <input
+                          type="checkbox"
+                          id={`fund-${project.id}`}
+                          checked={selectedProjects.includes(project.id)}
+                          onChange={() => handleProjectToggle(project.id)}
+                        />
+                        <label htmlFor={`fund-${project.id}`}>Fund this Project</label>
+                      </div>
+                      <textarea
+                        value={comments[project.id] || ''}
+                        onChange={(e) => handleCommentChange(project.id, e.target.value)}
+                        placeholder="Add your comments here..."
+                      />
+                    </div>
                   </div>
-                  <textarea
-                    value={comments[project.id] || ''}
-                    onChange={(e) => handleCommentChange(project.id, e.target.value)}
-                    placeholder="Add your comments here..."
-                  />
-                </div>
+                ))}
+                <button className="previous-button" onClick={handlePreviousPage}>Previous Page</button>
               </div>
-            ))}
-            <button className="previous-button" onClick={handlePreviousPage}>Previous Page</button>
-          </div>
-        )}
-          </main>
-                <footer className="footer">
-                  <div className="footer-line"></div>
-                  <p>Phelps NY Forward</p>
-                </footer>
-              </>
             )}
-              </div>
-            );
-          }
+          </main>
+          <footer className="footer">
+            <div className="footer-line"></div>
+            <p>Phelps NY Forward</p>
+          </footer>
+        </>
+      )}
+    </div>
+  );
+}
 
-          export default App;
+export default App;
