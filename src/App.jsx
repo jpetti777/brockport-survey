@@ -236,8 +236,11 @@ function App() {
         )}
           </main>
                 <footer className="footer">
+                  <div className="footer-line"></div>
                   <p>Phelps NY Forward</p>
                 </footer>
+              </>
+            )}
               </div>
             );
           }
