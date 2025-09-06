@@ -157,15 +157,15 @@ function App() {
       )}
 
       {showSuccess ? (
-        <div className="success-page">
-          <div className="success-content">
-            <h1>Thank You!</h1>
-            <h2>Your survey has been submitted successfully.</h2>
-            <p>Your responses will be shared with the Local Planning Committee to help guide their decisions about which projects to recommend for funding.</p>
-            <p>Coming Up: Please join us for the next meeting of the Local Planning Committee on Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more inforamtion, please visit: https://villageofphelpsny.gov/phelps-forward.</p>
-            <p><strong>You may now close this page.</strong></p>
-          </div>
+      <div className="success-page">
+        <div className="success-content">
+          <h1>Thank You!</h1>
+          <h2>Your survey has been submitted successfully.</h2>
+          <p>Your responses will be shared with the Local Planning Committee to help guide their decisions about which projects to recommend for funding.</p>
+          <p><strong>Coming Up:</strong> Please join us for the next meeting of the Local Planning Committee on Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://villageofphelpsny.gov/phelps-forward" target="_blank" rel="noopener noreferrer">https://villageofphelpsny.gov/phelps-forward</a>.</p>
+          <p><strong>You may now close this page.</strong></p>
         </div>
+      </div>
       ) : (
         <>
           {!showInstructions && (
