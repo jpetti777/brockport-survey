@@ -129,7 +129,7 @@ function App() {
       } else {
         console.error('Error setting up request:', error.message);
       }
-      alert(`Error submitting survey: ${error.message}. Please check console for more details.`);
+      alert(`Error submitting survey: ${error.message}. Please contact PhelpsNYForward@gmail.com for assistance.`);
     }
   };
 
@@ -160,9 +160,9 @@ function App() {
         <div className="success-page">
           <div className="success-content">
             <h1>Thank You!</h1>
-            <h2>Your survey has been submitted successfully</h2>
+            <h2>Your survey has been submitted successfully.</h2>
             <p>Your responses will be shared with the Local Planning Committee to help guide their decisions about which projects to recommend for funding.</p>
-            <p>The next meeting of the Local Planning Committee is scheduled for mid-October at the Phelps Village Hall. This meeting is open to the public and there will be time reserved at the end for public comments.</p>
+            <p>Coming Up: Please join us for the next meeting of the Local Planning Committee on Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more inforamtion, please visit: https://villageofphelpsny.gov/phelps-forward.</p>
             <p><strong>You may now close this page.</strong></p>
           </div>
         </div>
@@ -190,8 +190,8 @@ function App() {
                 </button>
               </div>
               {remainingBudget < 0 && (
-                <div className="error-message">
-                  You have exceeded the $4,500,000 budget. Please deselect some projects.
+                <div className="budget-error">
+                  You have exceeded the $4,500,000 budget. Please remove some projects from your selection.
                 </div>
               )}
             </header>
@@ -208,10 +208,10 @@ function App() {
                 </div>
 
                 <h3>How We Will Use This Data</h3>
-                <p>Your responses will be anonymously shared with the Local Planning Committee, which is the committee that will decide which proposed projects get recommended to New York State for potential funding. The next meeting of the Local Planning Committee is scheduled for mid-October at the Phelps Village Hall. This meeting is open to the public and there will be time reserved at the end of the meeting for a public comment period.</p>
+                <p>Your responses will be anonymously shared with the Local Planning Committee, which is the committee that will decide which proposed projects get recommended to New York State for potential funding. Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more inforamtion, please visit: https://villageofphelpsny.gov/phelps-forward.</p>
 
                 <h3>Due Date</h3>
-                <p>This survey will close on Friday, October 4th at 11:59 PM.</p>
+                <p>This survey will close on Wednesday, September 17th at 11:59 PM.</p>
 
                 <div className="user-input">
                   <input
