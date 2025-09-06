@@ -351,9 +351,9 @@
 }
 
 .project-content textarea:focus {
-  border-color: #3498db;
+  border-color: #000000;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .project-content textarea::placeholder {

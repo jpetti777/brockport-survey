@@ -85,6 +85,19 @@ function App() {
   const handleSubmit = async () => {
     if (isSubmitted) return; // Prevent multiple submissions
 
+    // Double-check that at least one project is selected
+    if (selectedProjects.length === 0) {
+      alert('Please select at least one project before submitting your survey.');
+      return;
+    }
+
+    // Ask for confirmation before submitting
+    const confirmed = window.confirm('Are you sure you want to submit your survey? You will not be able to make changes after submitting.');
+
+    if (!confirmed) {
+      return; // User cancelled, don't submit
+    }
+
     try {
       const surveyData = {
         userName,
