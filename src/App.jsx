@@ -15,7 +15,7 @@ const projects = [
   { id: 6, name: "Small Project Grant Fund", location: "NY Forward Area", cost: 600000, totalCost: 780000, description: "This project will create a matching grant fund for small projects in the NY Forward Area, such as facade improvements, renovations to commercial and mixed-use buildings, and business assistance. Grant recipients will be required to provide a minimum 25% match.", imagePath: "/images/project6.jpg" },
   { id: 7, name: "Library Entry Upgrades & Reading Garden", location: "Phelps Library", cost: 500000, totalCost: 500000, description: "This project will formalize the rear entry to the Phelps Library so that it is more visible to the community and also ADA-accessible. In addition, a small reading garden will be created outside the rear entry to create a quiet space for reflection.", imagePath: "/images/project7.jpg" },
   { id: 8, name: "Phelps Community Center Multi-Purpose Space", location: "Phelps Community Center", cost: 1500000, totalCost: 1500000, description: "This project will reconfigure the existing Phelps Community Center cafeteria and kitchen to create a multi-purpose space, with a stage for performances, teaching kitchen, flexible community space, and outdoor plaza area.", imagePath: "/images/project8.jpg" },
-  { id: 9, name: "Memorial Park Accessibility Improvements & Upgrades", location: "Memorial Park", cost: 100000, totalCost: 100000, description: "This project will create accessible access to Memorial Park by extending the existing sidewalk from the Flint Creek bridge to the west entry of the memorial. Additional enhancements will include landscaping, lighting, and joint re-pointing.", imagePath: "/images/project9.jpg" },
+  { id: 9, name: "Memorial Park Accessibility Improvements & Upgrades", location: "Memorial Park", cost: 100000, totalCost: 100000, description: "This project will create accessible access to Memorial Park by extending the existing sidewalk from the Flint Creek bridge to the west entry of the memorial. Additional enhancements will include landscaging, lighting, and joint re-pointing.", imagePath: "/images/project9.jpg" },
   { id: 10, name: "Town Hall Outdoor Space Enhancements", location: "Town Hall", cost: 250000, totalCost: 250000, description: "This project will enhance the greenspace on the east-side of Town Hall with seating, landscaping, and a walkway connecting Main Street to the rear parking lot. The greenspace will feature a flagpole, the bell from the firehouse, and a commemorative plaque. In addition, this project will enhance the comfort and safety of the alleyway on the west-side of Town Hall with string lights, a unique pavement treatment, and other amenities.", imagePath: "/images/project10.jpg" },
   { id: 11, name: "Phelps Hotel Renovation", location: "90 Main Street", cost: 950000, totalCost: 1500000, description: "This project will reactive the historic Phelps Hotel as a downtown anchor with unique commercial and residential options. NY Forward funding will be used to completely restore the first floor, including reviving the restaurant, bar, and banquet center, and creating a rooftop terrace seating area. Funding from other sources will be used to convert the second and third floors into apartments and re-open the speakeasy in the basement.", imagePath: "/images/project11.jpg" },
   { id: 12, name: "92-98 Main Street Upgrades", location: "92-98 Main Street", cost: 250000, totalCost: 300000, description: "This project will transform the former laundromat at 92-98 Main Street into a rentable commercial space. The project will also upgrade the three apartments and four other commercial spaces in the building. All units will be equipped with new HVAC and electrical systems, the commercial units will get new doors, and foundation work will be completed in the basement.", imagePath: "/images/project12.jpg" },
@@ -30,6 +30,7 @@ function App() {
   const [comments, setComments] = useState({});
   const [showInstructions, setShowInstructions] = useState(true);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -91,12 +92,12 @@ function App() {
       return;
     }
 
-    // Ask for confirmation before submitting
-    const confirmed = window.confirm('Are you sure you want to submit your survey? You will not be able to make changes after submitting.');
+    // Show custom confirmation modal
+    setShowConfirmModal(true);
+  };
 
-    if (!confirmed) {
-      return; // User cancelled, don't submit
-    }
+  const confirmSubmit = async () => {
+    setShowConfirmModal(false);
 
     try {
       const surveyData = {
@@ -130,6 +131,10 @@ function App() {
       }
       alert(`Error submitting survey: ${error.message}. Please check console for more details.`);
     }
+  };
+
+  const cancelSubmit = () => {
+    setShowConfirmModal(false);
   };
 
   return (
@@ -167,14 +172,14 @@ function App() {
             <header className="sticky-header">
               <h1>Phelps NY Forward Project Funding Survey</h1>
               <div className="budget-container">
-                <div className="budget-info">
-                  <span><strong>Total Budget:</strong> ${(4500000).toLocaleString()}</span>
-                  <span><strong>Remaining:</strong> ${remainingBudget.toLocaleString()}</span>
-                </div>
                 <div className="progress-container">
                   <div className="progress-bar">
                     <div style={getProgressBarStyle()}></div>
                   </div>
+                </div>
+                <div className="budget-info">
+                  <span><strong>Total Budget:</strong> ${(4500000).toLocaleString()}</span>
+                  <span><strong>Remaining:</strong> ${remainingBudget.toLocaleString()}</span>
                 </div>
                 <button 
                   className={`submit-button ${isSubmitted ? 'submitted' : ''}`}
