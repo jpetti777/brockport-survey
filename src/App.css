@@ -533,16 +533,16 @@
   }
 
   .fund-checkbox {
-    padding: 0.4rem 0.7rem;
+    padding: 0.5rem 0.8rem;
   }
 
   .fund-checkbox input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
 
   .fund-checkbox label {
     font-size: 0.85rem;
-    line-height: 15px;
+    line-height: 18px;
   }
 }

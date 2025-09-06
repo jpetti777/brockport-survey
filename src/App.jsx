@@ -125,7 +125,6 @@ function App() {
         <div className="success-page">
           <div className="success-content">
             <h1>Thank You!</h1>
-            <div className="success-checkmark">✓</div>
             <h2>Your survey has been submitted successfully</h2>
             <p>Your responses will be shared with the Local Planning Committee to help guide their decisions about which projects to recommend for funding.</p>
             <p>The next meeting of the Local Planning Committee is scheduled for mid-October at the Phelps Village Hall. This meeting is open to the public and there will be time reserved at the end for public comments.</p>
