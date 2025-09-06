@@ -106,6 +106,15 @@
   font-weight: 600;
 }
 
+/* Updated: Less obnoxious budget validation error */
+.budget-error {
+  color: #e74c3c;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
 .success-message {
   background-color: #27ae60;
   color: white;
@@ -135,11 +144,12 @@
   padding-top: 1rem;
 }
 
+/* Updated: Reduced spacing between headers and body text */
 .instructions-page h3 {
   color: #000000;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
   margin-top: 1.5rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
@@ -185,8 +195,9 @@
   margin: 1rem 0;
 }
 
+/* Updated: Blue Next Page button */
 .next-button {
-  background-color: #000000;
+  background-color: #3498db;
   color: white;
   border: none;
   padding: 12px 32px;
@@ -200,7 +211,7 @@
 }
 
 .next-button:hover:not(:disabled) {
-  background-color: #333333;
+  background-color: #2980b9;
   transform: translateY(-1px);
 }
 
@@ -271,11 +282,12 @@
   padding: 1.5rem;
 }
 
+/* Updated: Reduced spacing between project number and title */
 .project-number {
   color: #7f8c8d;
   font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.3rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -592,19 +604,22 @@
     padding: 0 0.5rem;
   }
 
+  /* Updated: Bigger Fund this Project box on mobile */
   .fund-checkbox {
-    padding: 0.6rem 1.5rem;
-    min-width: 200px;
+    padding: 1rem 2rem;
+    min-width: 280px;
+    font-size: 1.1rem;
   }
 
   .fund-checkbox input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   .fund-checkbox label {
-    font-size: 0.9rem;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: 700;
   }
 
   .modal-content {
@@ -655,18 +670,21 @@
     padding: 10px 20px;
   }
 
+  /* Updated: Even bigger Fund this Project box on very small screens */
   .fund-checkbox {
-    padding: 0.5rem 1.2rem;
-    min-width: 180px;
+    padding: 1.2rem 2.5rem;
+    min-width: 300px;
+    font-size: 1.1rem;
   }
 
   .fund-checkbox input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: 26px;
+    height: 26px;
   }
 
   .fund-checkbox label {
-    font-size: 0.85rem;
-    line-height: 18px;
+    font-size: 1.1rem;
+    line-height: 26px;
+    font-weight: 700;
   }
 }
