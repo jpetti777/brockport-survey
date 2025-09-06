@@ -162,7 +162,7 @@ function App() {
                 <button 
                   className={`submit-button ${isSubmitted ? 'submitted' : ''}`}
                   onClick={handleSubmit} 
-                  disabled={remainingBudget < 0 || isSubmitted}
+                  disabled={remainingBudget < 0 || selectedProjects.length === 0 || isSubmitted}
                 >
                   {isSubmitted ? 'Submitted' : 'Submit'}
                 </button>
