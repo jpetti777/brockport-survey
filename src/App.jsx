@@ -134,6 +134,23 @@ function App() {
 
   return (
     <div className="App">
+      {showConfirmModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Confirm Submission</h2>
+            <p>Are you sure you want to submit your survey? You will not be able to make changes after submitting.</p>
+            <div className="modal-buttons">
+              <button className="modal-confirm-button" onClick={confirmSubmit}>
+                Yes, Submit Survey
+              </button>
+              <button className="modal-cancel-button" onClick={cancelSubmit}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {showSuccess ? (
         <div className="success-page">
           <div className="success-content">
