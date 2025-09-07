@@ -208,7 +208,7 @@ function App() {
                 </div>
 
                 <h3>How We Will Use This Data</h3>
-                <p>Your responses will be anonymously shared with the Local Planning Committee, which is the committee that will decide which proposed projects get recommended to New York State for potential funding. Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more inforamtion, please visit: <a href="https://villageofphelpsny.gov/phelps-forward" target="_blank" rel="noopener noreferrer">https://villageofphelpsny.gov/phelps-forward</a>.</p>
+                <p>Your responses will be anonymously shared with the Local Planning Committee, which is the committee that will decide which proposed projects get recommended to New York State for potential funding. Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://villageofphelpsny.gov/phelps-forward" target="_blank" rel="noopener noreferrer">https://villageofphelpsny.gov/phelps-forward</a>.</p>
 
                 <h3>Due Date</h3>
                 <p>This survey will close on Wednesday, September 17th at 11:59 PM.</p>
