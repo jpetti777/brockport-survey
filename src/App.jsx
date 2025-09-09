@@ -202,15 +202,14 @@ function App() {
                 <h1>Phelps NY Forward Project Funding Survey</h1>
                 <h3>Instructions</h3>
                 <p>The Village of Phelps was awarded $4,500,000 from New York State through the NY Forward program to revitalize downtown. Several projects have been proposed for potential funding. <strong>This survey gives you the opportunity to provide feedback on which projects you think would most benefit downtown Phelps.</strong></p> 
-                <p>In this survey, you will get a budget of $4,500,000 to "spend" on the proposed projects. You can choose which projects you would fund by clicking the checkbox next to each project. A progress bar at the top of the screen will automatically sum how much money you have spent, and will indicate how much money you have remaining in your budget. You will not be able to submit the survey if you spend more than $4,500,000.</p> 
-                <p>You can also leave comments about the proposed projects in the box provided.</p>
+                <p>In this survey, you will get a budget of $4,500,000 to "spend" on the proposed projects. You can choose which projects you would fund by clicking the checkbox next to each project. A progress bar at the top of the screen will automatically sum how much money you have spent, and will indicate how much money you have remaining in your budget. You will not be able to submit the survey if you spend more than $4,500,000. You can also leave comments about the proposed projects in the box provided.</p>
 
                 <div className="callout-box">
                   <strong className="important-text">Important:</strong> Please complete this survey in one sitting. It should take approximately 15 minutes to complete. Your progress will NOT be saved if you close or refresh this window before submitting the survey.
                 </div>
 
                 <h3>How We Will Use This Data</h3>
-                <p>Your responses will be anonymously shared with the Local Planning Committee, which is the group that will decide which proposed projects to recommend to New York State for potential funding. The next meeting of the Local Planning Committee is Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://villageofphelpsny.gov/phelps-forward" target="_blank" rel="noopener noreferrer">https://villageofphelpsny.gov/phelps-forward</a>.</p>
+                <p>Your responses will be shared anonymously with the Local Planning Committee, which is the group that will decide which of the proposed projects to recommend to New York State for potential funding. The next meeting of the Local Planning Committee is Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room (8 Banta Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://villageofphelpsny.gov/phelps-forward" target="_blank" rel="noopener noreferrer">https://villageofphelpsny.gov/phelps-forward</a>.</p>
 
                 <h3>Due Date</h3>
                 <p>This survey will close on Wednesday, September 17th at 11:59 PM.</p>
