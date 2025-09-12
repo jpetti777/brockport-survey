@@ -135,7 +135,7 @@ function App() {
       } else {
         console.error('Error setting up request:', error.message);
       }
-      alert(`Error submitting survey: ${error.message}. Please contact BrockportNYForward@gmail.com for assistance.`);
+      alert(`Error submitting survey: ${error.message}. Please try again.`);
     }
   };
 
@@ -168,7 +168,7 @@ function App() {
           <h1>Thank You!</h1>
           <h2>Your survey has been submitted successfully.</h2>
           <p>Your responses will be shared with the Local Planning Committee to help guide their decisions about which projects to recommend for funding.</p>
-          <p><strong>Coming Up:</strong> Please join us for the next meeting of the Local Planning Committee on Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room. This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://villageofbrockport.org/brockport-forward" target="_blank" rel="noopener noreferrer">https://villageofbrockport.org/brockport-forward</a>.</p>
+          <p><strong>Coming Up:</strong> Please join us for the next meeting of the Local Planning Committee on Tuesday, October 7th at 6:00 PM at the Parish Center at Church of Nativity of the Blessed Virgin Mary (152 Main Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://www.brockportforward.com/" target="_blank" rel="noopener noreferrer">www.brockportforward.com/</a>.</p>
           <p><strong>You may now close this page.</strong></p>
         </div>
       </div>
@@ -215,10 +215,10 @@ function App() {
                 </div>
 
                 <h3>How We Will Use This Data</h3>
-                <p>Your responses will be shared anonymously with the Local Planning Committee, which is the group that will decide which of the proposed projects to recommend to New York State for potential funding. The next meeting of the Local Planning Committee is Wednesday, September 24th at 6:00 PM at the Village Offices Meeting Room. This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://villageofbrockport.org/brockport-forward" target="_blank" rel="noopener noreferrer">https://villageofbrockport.org/brockport-forward</a>.</p>
+                <p>Your responses will be shared anonymously with the Local Planning Committee, which is the group that will decide which of the proposed projects to recommend to New York State for potential funding. The next meeting of the Local Planning Committee is Tuesday, October 7th at 6:00 PM at the Parish Center at Church of Nativity of the Blessed Virgin Mary (152 Main Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://www.brockportforward.com/" target="_blank" rel="noopener noreferrer">www.brockportforward.com/</a>.</p>
 
                 <h3>Due Date</h3>
-                <p>This survey will close on Wednesday, September 17th at 11:59 PM.</p>
+                <p>This survey will close on Monday, September 29th at 11:59 PM.</p>
 
                 <div className="user-input">
                   <input

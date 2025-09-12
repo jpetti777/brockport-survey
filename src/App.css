@@ -207,15 +207,15 @@
 
 .radio-option {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   cursor: pointer;
   padding: 5px 0;
   font-weight: normal;
+  line-height: 1.2;
 }
 
 .radio-option input[type="radio"] {
   margin-right: 10px;
-  margin-top: 2px;
   cursor: pointer;
   flex-shrink: 0;
 }
