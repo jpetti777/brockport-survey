@@ -197,12 +197,14 @@
   margin-bottom: 10px;
   font-weight: bold;
   color: #000000;
+  text-align: left;
 }
 
 .radio-options {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .radio-option {
@@ -211,18 +213,23 @@
   font-weight: normal !important;
   margin-bottom: 0 !important;
   cursor: pointer;
+  text-align: left;
+  width: 100%;
 }
 
 .radio-option input[type="radio"] {
-  margin-right: 8px;
+  margin-right: 10px;
   margin-bottom: 0;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .radio-option label {
   font-weight: normal !important;
   margin-bottom: 0 !important;
   cursor: pointer;
+  text-align: left;
+  flex-grow: 1;
 }
 
 .anonymous-note {
