@@ -279,6 +279,7 @@ function App() {
                       </label>
                     </div>
                   </div>
+                </div>
 
                 <p className="anonymous-note">Your responses will be anonymous. Your email will not be saved. We only ask for this information to prevent duplicate responses. Thank you for your participation.</p>
 
