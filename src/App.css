@@ -138,8 +138,8 @@ html, body, #root {
 /* Instructions Page */
 .instructions-page {
   max-width: 800px;
-  margin: 1rem auto;
-  padding: 1.5rem;
+  margin: 2rem auto;
+  padding: 2rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -151,7 +151,7 @@ html, body, #root {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.8rem;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 }
 
 /* Updated: Reduced spacing between headers and body text */
