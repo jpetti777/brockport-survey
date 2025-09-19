@@ -31,7 +31,7 @@ const projects = [
     location: "Clinton Street", 
     cost: 0, 
     totalCost: 0, 
-    description: "The project will enhance Clinton Street with wider sidewalks, improved lighting, enhanced crosswalks, landscaping, and road repaving. These improvements will create safer pedestrian access connecting downtown, SUNY Brockport, and the Erie Canal waterfront while supporting local businesses through a more attractive and accessible streetscape.", 
+    description: "There are two options for this project.", 
     imagePath: "/images/project3.jpg",
     hasOptions: true,
     options: [
@@ -315,7 +315,7 @@ function App() {
       const isSelected = !!selectedOption;
 
       return (
-        <div key={project.id} className={`project-card ${isSelected ? 'selected' : ''}`}>
+        <div key={project.id} className="project-card">
           <div className="project-image">
             <img src={project.imagePath} alt={project.name} />
           </div>
