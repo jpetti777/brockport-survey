@@ -315,7 +315,7 @@ function App() {
       const isSelected = !!selectedOption;
 
       return (
-        <div key={project.id} className="project-card">
+        <div key={project.id} className={`project-card ${isSelected ? 'selected' : ''}`}>
           <div className="project-image">
             <img src={project.imagePath} alt={project.name} />
           </div>
@@ -326,7 +326,7 @@ function App() {
 
             <div className="project-options">
               {project.options.map((option) => (
-                <div key={option.id} className={`project-option ${selectedProjects.includes(option.id) ? 'selected' : ''}`}>
+                <div key={option.id} className="project-option">
                   <h4>{option.name}</h4>
                   <p className="option-description">{option.description}</p>
                   <p className="project-cost"><strong>Funding Request: ${option.cost.toLocaleString()}</strong></p>
@@ -410,7 +410,6 @@ function App() {
           <h1>Thank You!</h1>
           <h2>Your survey has been submitted successfully.</h2>
           <p>Your responses will be shared with the Local Planning Committee to help guide their decisions about which projects to recommend for funding.</p>
-          <p><strong>Coming Up:</strong> Please join us for the next meeting of the Local Planning Committee on Tuesday, October 7th at 6:00 PM at the Parish Center at Church of Nativity of the Blessed Virgin Mary (152 Main Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://www.brockportforward.com/" target="_blank" rel="noopener noreferrer">www.brockportforward.com/</a>.</p>
           <p><strong>You may now close this page.</strong></p>
         </div>
       </div>
