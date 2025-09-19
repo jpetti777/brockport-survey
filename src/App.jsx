@@ -7,21 +7,140 @@ const API_URL = '';
 console.log('Using Vercel API routes - no CORS needed');
 
 const projects = [
-  { id: 1, name: "Main Street & Church Street Enhancements", location: "Main Street & Church Street", cost: 500000, totalCost: 500000, description: "This project will enhance and beautify Main Street and Church Street with new amenities, including benches, planter boxes, hanging planters, and trash/recycling receptacles. This project will also take steps to improve pedestrian and vehicular safety through enhanced crosswalk treatments and the installation of a landscaped median on a portion of Main Street.", imagePath: "/images/project1.jpg" },
-  { id: 2, name: "Exchange Street \"Festival Street\"", location: "Exchange Street, from Main Street to parking lot entry", cost: 500000, totalCost: 500000, description: "This project will raise a portion of Exchange Street to curb-level to make the street more pedestrian-friendly and easier to temporarily close for festivals and events. Additional amenities will be installed including benches, planters, string lights, and a gateway feature that identifies Exchange Street as a unique community space.", imagePath: "/images/project2.jpg" },
-  { id: 3, name: "Exchange Street Parking Lot Enhancements", location: "Exchange Street Parking Lot", cost: 1000000, totalCost: 1000000, description: "This project will enhance the Exchange Street parking lot with landscaped islands to make it more inviting and aesthetically pleasing. In addition, a small area in the rear of the parking lot will be formalized as the \"Harvest Host\" area, with amenities including benches, trash receptacles, and electrical hookups that will allow for overnight RV parking in this area.", imagePath: "/images/project3.jpg" },
-  { id: 4, name: "Crooked Bridge Park Improvements", location: "Crooked Bridge Park", cost: 1000000, totalCost: 1000000, description: "This project will activate Crooked Bridge Park with the addition of an ADA-accessible walkway to Flint Creek, a small pavilion, and an area for kayakers to safely exit the creek.", imagePath: "/images/project4.jpg" },
-  { id: 5, name: "Wayfinding & Downtown Branding", location: "NY Forward Area", cost: 300000, totalCost: 300000, description: "This project will install a system of directional, informational, and interpretive signage at key locations and destinations to guide visitors throughout downtown Brockport. This project will also develop a new brand and marketing strategy to attract residents, visitors, and businesses to Brockport.", imagePath: "/images/project5.jpg" },
-  { id: 6, name: "Small Project Grant Fund", location: "NY Forward Area", cost: 600000, totalCost: 780000, description: "This project will create a matching grant fund for small projects in the NY Forward Area, such as facade improvements, renovations to commercial and mixed-use buildings, and business assistance. Grant recipients will be required to provide a minimum 25% match.", imagePath: "/images/project6.jpg" },
-  { id: 7, name: "Library Entry Upgrades & Reading Garden", location: "Brockport Library", cost: 500000, totalCost: 500000, description: "This project will formalize the rear entry to the Brockport Library so that it is more visible to the community and also ADA-accessible. In addition, a small reading garden will be created outside the rear entry to create a quiet space for reflection.", imagePath: "/images/project7.jpg" },
-  { id: 8, name: "Brockport Community Center Multi-Purpose Space", location: "Brockport Community Center", cost: 1500000, totalCost: 1500000, description: "This project will reconfigure the existing Brockport Community Center cafeteria and kitchen to create a multi-purpose space, with a stage for performances, teaching kitchen, flexible community space, and outdoor plaza area.", imagePath: "/images/project8.jpg" },
-  { id: 9, name: "Memorial Park Accessibility Improvements & Upgrades", location: "Memorial Park", cost: 100000, totalCost: 100000, description: "This project will create accessible access to Memorial Park by extending the existing sidewalk from the Flint Creek bridge to the west entry of the memorial. Additional enhancements will include landscaging, lighting, and joint re-pointing.", imagePath: "/images/project9.jpg" },
-  { id: 10, name: "Town Hall Outdoor Space Enhancements", location: "Town Hall", cost: 250000, totalCost: 250000, description: "This project will enhance the greenspace on the east-side of Town Hall with seating, landscaping, and a walkway connecting Main Street to the rear parking lot. The greenspace will feature a flagpole, the bell from the firehouse, and a commemorative plaque. In addition, this project will enhance the comfort and safety of the alleyway on the west-side of Town Hall with string lights, a unique pavement treatment, and other amenities.", imagePath: "/images/project10.jpg" },
-  { id: 11, name: "Historic Downtown Building Renovation", location: "90 Main Street", cost: 950000, totalCost: 1500000, description: "This project will reactive a historic downtown building as a downtown anchor with unique commercial and residential options. NY Forward funding will be used to completely restore the first floor, including creating restaurant, retail, and community spaces, and creating outdoor seating areas. Funding from other sources will be used to convert the upper floors into apartments.", imagePath: "/images/project11.jpg" },
-  { id: 12, name: "92-98 Main Street Upgrades", location: "92-98 Main Street", cost: 250000, totalCost: 300000, description: "This project will transform vacant commercial space at 92-98 Main Street into rentable commercial space. The project will also upgrade the apartments and other commercial spaces in the building. All units will be equipped with new HVAC and electrical systems, the commercial units will get new doors, and foundation work will be completed in the basement.", imagePath: "/images/project12.jpg" },
-  { id: 13, name: "Creekside Event Venue", location: "2-10 Flint Street", cost: 100000, totalCost: 180000, description: "This project will make structural improvements to stabilize the building at 2-10 Flint Street. The facade of the building will also be enhanced with paint and carpentry work. The future vision for the building is to transform the upper floors into a unique event venue for functions like performances, concerts, and weddings.", imagePath: "/images/project13.jpg" },
-  { id: 14, name: "114 Main Street Enhancements", location: "114 Main Street", cost: 150000, totalCost: 206000, description: "As part of this project, local businesses will receive new bay windows, ADA-accessible front entries, and new awnings. Plumbing and electrical systems will be installed to support expanded programming opportunities. Currently vacant upper floors will be out-fit with electric, water, and egress to support the conversion of these spaces into studio apartments. The building facade will also be enhanced with fresh paint and brick restoration.", imagePath: "/images/project14.jpg" },
-  { id: 15, name: "Local Business Enhancement Project", location: "3 Church Street", cost: 150000, totalCost: 225000, description: "This project will enhance local business spaces with new amenities, including outdoor seating areas, improved accessibility, and enhanced facades. The project will also support the creation of unique gathering spaces that serve both residents and visitors. The front facade of participating buildings will be restored to their historic appearance, with new paint, awnings, brick work, and business signage.", imagePath: "/images/project15.jpg" },
+  { 
+    id: 1, 
+    name: "Create an Accessible Venue at the Brockport Welcome Center", 
+    location: "11 Water Street", 
+    cost: 300000, 
+    totalCost: 300000, 
+    description: "The project will retrofit and expand accessible outdoor seating at the Brockport Welcome Center to enhance waterfront amenities for residents and Erie Canal visitors. The work includes creating inclusive seating with waterfront views and making necessary site preparation and infrastructure improvements. These enhancements will transform the Welcome Center into a more inviting community gathering place that better serves both locals and tourists exploring the waterfront area.", 
+    imagePath: "/images/project1.jpg" 
+  },
+  { 
+    id: 2, 
+    name: "Enhance the Main Street Streetscape", 
+    location: "From the Canal Bridge to State Street", 
+    cost: 2400000, 
+    totalCost: 2400000, 
+    description: "The project will revitalize Main Street's historic commercial district through the replacement of existing sidewalks, installing new street trees, and modernizing the lighting system with LED fixtures that include power connections for special events. The project will also add waste receptacles, banner poles, and bike racks to encourage cycling in the downtown area. These improvements are designed to enhance the historic commercial district's appeal and functionality for both residents and visitors.", 
+    imagePath: "/images/project2.jpg" 
+  },
+  { 
+    id: 3, 
+    name: "Enhance the Clinton Street Streetscape", 
+    location: "Clinton Street", 
+    cost: 0, 
+    totalCost: 0, 
+    description: "The project will enhance Clinton Street with wider sidewalks, improved lighting, enhanced crosswalks, landscaping, and road repaving. These improvements will create safer pedestrian access connecting downtown, SUNY Brockport, and the Erie Canal waterfront while supporting local businesses through a more attractive and accessible streetscape.", 
+    imagePath: "/images/project3.jpg",
+    hasOptions: true,
+    options: [
+      {
+        id: "3a",
+        name: "Option 1: Main Street to Utica Street",
+        cost: 1200000,
+        totalCost: 1200000,
+        description: "The project will enhance Clinton Street from Main Street to Utica Street with wider sidewalks, improved lighting, enhanced crosswalks, landscaping, and road repaving."
+      },
+      {
+        id: "3b", 
+        name: "Option 2: Main Street to Merchant Street",
+        cost: 950000,
+        totalCost: 950000,
+        description: "The project will enhance Clinton Street from Main Street to Merchant Street with wider sidewalks, improved lighting, enhanced crosswalks, landscaping, and road repaving."
+      }
+    ]
+  },
+  { 
+    id: 4, 
+    name: "Small Project Grant Fund", 
+    location: "NY Forward Area", 
+    cost: 300000, 
+    totalCost: 400000, 
+    description: "This project will establish a grant fund for small projects in the NY Forward Area, such as facade improvements and small-scale renovations. Funding may also be used to renovate multifamily housing to make it more marketable. The fund will be administered by the Village. Grant recipients will be required to provide a minimum 25% match.", 
+    imagePath: "/images/project4.jpg" 
+  },
+  { 
+    id: 5, 
+    name: "Enhance Accessibility at St. Luke's Episcopal Church", 
+    location: "14 State Street", 
+    cost: 800000, 
+    totalCost: 833000, 
+    description: "The project will rehabilitate the historic St. Luke's Episcopal Church to improve accessibility to the Brockport Ecumenical Food Shelf and Clothing Center. The work includes installing a new elevator, repairing the Main Street entry stairs and ramp to ensure ADA compliance, and renovating the basement with an updated layout and moisture-proofing solutions. These enhancements will make the vital community services housed in the building more accessible to all residents who need them.", 
+    imagePath: "/images/project5.jpg" 
+  },
+  { 
+    id: 6, 
+    name: "Modernize Brockport Fire Station", 
+    location: "38 Market Street", 
+    cost: 150000, 
+    totalCost: 300000, 
+    description: "The project will replace eight overhead bay doors at Station #1 with high-quality aluminum full-view doors featuring improved thermal performance and custom red paint to match department branding. These upgrades will enhance the downtown streetscape appearance while improving the station's operational efficiency, reliability, and energy performance. This work represents phase 1 of a larger beautification effort planned for Station #1.", 
+    imagePath: "/images/project6.jpg" 
+  },
+  { 
+    id: 7, 
+    name: "Enhance 2 Main Street as a Canal Gateway", 
+    location: "2 Main Street", 
+    cost: 200000, 
+    totalCost: 400000, 
+    description: "The project will beautify this prominent mixed-use property to strengthen its appeal as a gateway to the canal. Improvements include upgrades to three commercial storefronts and six apartments, featuring new parking areas, roofing, siding, windows, and central air conditioning for the storefronts. The work also includes installing energy-efficient laundry facilities and adding landscaping with canal-side benches.", 
+    imagePath: "/images/project7.jpg" 
+  },
+  { 
+    id: 8, 
+    name: "Revitalize Blighted Property at 41 Clark Street with New Townhomes", 
+    location: "41 Clark Street", 
+    cost: 800000, 
+    totalCost: 4000000, 
+    description: "The project will demolish a blighted single-family home and barn to make way for new residential development. The plan includes constructing 12 new townhomes, with each unit featuring 3 bedrooms, 2.5 bathrooms, and a single-car garage. The project will require both a Special Use Permit and Area Variance as part of the approval process.", 
+    imagePath: "/images/project8.jpg" 
+  },
+  { 
+    id: 9, 
+    name: "Improve Accessibility at the Lift Bridge Book Shop", 
+    location: "45 Main Street", 
+    cost: 350000, 
+    totalCost: 400000, 
+    description: "The project will enhance accessibility at the Lift Bridge Book Shop by modifying the side entrance to meet ADA requirements and installing a lift to provide access to the lower level. The work includes constructing a fully accessible bathroom on the lower level. The accessibility enhancements will make it possible for the lower level to be used for community events and improve its overall appeal.", 
+    imagePath: "/images/project9.jpg" 
+  },
+  { 
+    id: 10, 
+    name: "Restore Upper Floor Apartments and Facade at 46-50 Main Street", 
+    location: "46-50 Main Street", 
+    cost: 350000, 
+    totalCost: 750000, 
+    description: "The project will reconfigure the vacant third floor into three new one-bedroom apartments. The apartments will be targeted to graduate students and young professionals, addressing housing needs for this demographic. The work will also enhance the building's facade by replacing the existing 1970s vinyl siding with historically appropriate brickwork. This project builds on previously completed renovations to the first floor commercial spaces.", 
+    imagePath: "/images/project10.jpg" 
+  },
+  { 
+    id: 11, 
+    name: "Develop Sustainable Mixed-Income Apartments at 60-90 Clinton Street", 
+    location: "60-90 Clinton Street", 
+    cost: 1500000, 
+    totalCost: 8600000, 
+    description: "The project will transform the vacant lot at 60-90 Clinton Street into a new 25,000-square-foot apartment building with 25 one- and two-bedroom units. The building will feature sustainable high-efficiency electric heating and cooling systems along with fully electric appliances. This development will provide high-quality, mixed-income housing options designed to serve SUNY Brockport employees, teachers, and hospital workers.", 
+    imagePath: "/images/project11.jpg" 
+  },
+  { 
+    id: 12, 
+    name: "Upgrade 73 Main Street Exterior Facade", 
+    location: "73 Main Street", 
+    cost: 50000, 
+    totalCost: 100000, 
+    description: "The project will upgrade the mixed-use building at 73 Main Street by rehabilitating the exterior facade that faces the public parking lot and installing energy-efficient windows throughout the building. The work will also include replacing several exterior doors, reconfiguring the steep rear stairway for improved safety, and incorporating a mural to enhance the building's visual appeal.", 
+    imagePath: "/images/project12.jpg" 
+  },
+  { 
+    id: 13, 
+    name: "Restore the Morgan Manning House Post-Fire", 
+    location: "151 Main Street", 
+    cost: 450000, 
+    totalCost: 450000, 
+    description: "The project will enhance accessibility to the museum by installing a new staircase and lift connecting to the side building entrance, along with new accessible parking spaces. Restrooms will be renovated to be ADA compliant, and enhanced security lighting will be installed. The work will also include renovating the kitchen to support events. This project complements the ongoing rehabilitation following the recent devastating fire to the building.", 
+    imagePath: "/images/project13.jpg" 
+  }
 ];
 
 function App() {
@@ -38,16 +157,43 @@ function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    const totalCost = selectedProjects.reduce((sum, id) => sum + projects.find(p => p.id === id).cost, 0);
+    const totalCost = selectedProjects.reduce((sum, projectId) => {
+      // Handle regular projects
+      const project = projects.find(p => p.id === parseInt(projectId));
+      if (project && !project.hasOptions) {
+        return sum + project.cost;
+      }
+
+      // Handle project options (like 3a, 3b)
+      const optionProject = projects.find(p => p.hasOptions && p.options.some(opt => opt.id === projectId));
+      if (optionProject) {
+        const option = optionProject.options.find(opt => opt.id === projectId);
+        return sum + option.cost;
+      }
+
+      return sum;
+    }, 0);
     setRemainingBudget(4500000 - totalCost);
   }, [selectedProjects]);
 
   const handleProjectToggle = (projectId) => {
-    setSelectedProjects(prev =>
-      prev.includes(projectId)
+    setSelectedProjects(prev => {
+      // For Project 3 options, ensure only one option can be selected at a time
+      if (projectId === '3a' || projectId === '3b') {
+        // If clicking the same option that's already selected, deselect it
+        if (prev.includes(projectId)) {
+          return prev.filter(id => id !== projectId);
+        }
+        // Otherwise, remove any existing Project 3 option and add the new one
+        const filtered = prev.filter(id => id !== '3a' && id !== '3b');
+        return [...filtered, projectId];
+      }
+
+      // Regular project toggle
+      return prev.includes(projectId)
         ? prev.filter(id => id !== projectId)
-        : [...prev, projectId]
-    );
+        : [...prev, projectId];
+    });
   };
 
   const handleCommentChange = (projectId, comment) => {
@@ -105,11 +251,30 @@ function App() {
     setShowConfirmModal(false);
 
     try {
+      // Process the selected projects to handle Project 3 options explicitly
+      const processedProjects = selectedProjects.map(projectId => {
+        if (projectId === '3a' || projectId === '3b') {
+          return {
+            projectId: 3,
+            option: projectId === '3a' ? 1 : 2,
+            optionName: projectId === '3a' ? 'Main Street to Utica Street' : 'Main Street to Merchant Street',
+            cost: projectId === '3a' ? 1200000 : 950000
+          };
+        }
+        // For regular projects
+        const project = projects.find(p => p.id === parseInt(projectId));
+        return {
+          projectId: parseInt(projectId),
+          cost: project ? project.cost : 0
+        };
+      });
+
       const surveyData = {
         userName,
         userEmail,
         sunyAffiliation,
-        selectedProjects,
+        selectedProjects: processedProjects,
+        rawSelectedProjects: selectedProjects, // Keep original for backup
         comments
       };
 
@@ -141,6 +306,83 @@ function App() {
 
   const cancelSubmit = () => {
     setShowConfirmModal(false);
+  };
+
+  const renderProjectCard = (project, index) => {
+    if (project.hasOptions) {
+      // Special rendering for Project 3 with options
+      const selectedOption = selectedProjects.find(id => id === '3a' || id === '3b');
+      const isSelected = !!selectedOption;
+
+      return (
+        <div key={project.id} className={`project-card ${isSelected ? 'selected' : ''}`}>
+          <div className="project-image">
+            <img src={project.imagePath} alt={project.name} />
+          </div>
+          <div className="project-content">
+            <p className="project-number">Project {index + 1} of 13</p>
+            <h3>{project.name}</h3>
+            <p className="project-description"><strong>Description:</strong> {project.description}</p>
+
+            <div className="project-options">
+              {project.options.map((option) => (
+                <div key={option.id} className={`project-option ${selectedProjects.includes(option.id) ? 'selected' : ''}`}>
+                  <h4>{option.name}</h4>
+                  <p className="option-description">{option.description}</p>
+                  <p className="project-cost"><strong>Funding Request: ${option.cost.toLocaleString()}</strong></p>
+                  <p className="project-total-cost">Total Project Cost: ${option.totalCost.toLocaleString()}</p>
+                  <div className="fund-checkbox">
+                    <input
+                      type="checkbox"
+                      id={`fund-${option.id}`}
+                      checked={selectedProjects.includes(option.id)}
+                      onChange={() => handleProjectToggle(option.id)}
+                    />
+                    <label htmlFor={`fund-${option.id}`}>Fund this Option</label>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <textarea
+              value={comments[project.id] || ''}
+              onChange={(e) => handleCommentChange(project.id, e.target.value)}
+              placeholder="Add your comments here..."
+            />
+          </div>
+        </div>
+      );
+    }
+
+    // Regular project rendering
+    return (
+      <div key={project.id} className={`project-card ${selectedProjects.includes(project.id) ? 'selected' : ''}`}>
+        <div className="project-image">
+          <img src={project.imagePath} alt={project.name} />
+        </div>
+        <div className="project-content">
+          <p className="project-number">Project {index + 1} of 13</p>
+          <h3>{project.name}</h3>
+          <p className="project-description"><strong>Description:</strong> {project.description}</p>
+          <p className="project-cost"><strong>Funding Request: ${project.cost.toLocaleString()}</strong></p>
+          <p className="project-total-cost">Total Project Cost: ${project.totalCost.toLocaleString()}</p>
+          <div className="fund-checkbox">
+            <input
+              type="checkbox"
+              id={`fund-${project.id}`}
+              checked={selectedProjects.includes(project.id)}
+              onChange={() => handleProjectToggle(project.id)}
+            />
+            <label htmlFor={`fund-${project.id}`}>Fund this Project</label>
+          </div>
+          <textarea
+            value={comments[project.id] || ''}
+            onChange={(e) => handleCommentChange(project.id, e.target.value)}
+            placeholder="Add your comments here..."
+          />
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -294,34 +536,7 @@ function App() {
               </div>
             ) : (
               <div className="projects-list">
-                {projects.map((project, index) => (
-                  <div key={project.id} className={`project-card ${selectedProjects.includes(project.id) ? 'selected' : ''}`}>
-                    <div className="project-image">
-                      <img src={project.imagePath} alt={project.name} />
-                    </div>
-                    <div className="project-content">
-                      <p className="project-number">Project {index + 1} of 15</p>
-                      <h3>{project.name}</h3>
-                      <p className="project-description"><strong>Description:</strong> {project.description}</p>
-                      <p className="project-cost"><strong>Funding Request: ${project.cost.toLocaleString()}</strong></p>
-                      <p className="project-total-cost">Total Project Cost: ${project.totalCost.toLocaleString()}</p>
-                      <div className="fund-checkbox">
-                        <input
-                          type="checkbox"
-                          id={`fund-${project.id}`}
-                          checked={selectedProjects.includes(project.id)}
-                          onChange={() => handleProjectToggle(project.id)}
-                        />
-                        <label htmlFor={`fund-${project.id}`}>Fund this Project</label>
-                      </div>
-                      <textarea
-                        value={comments[project.id] || ''}
-                        onChange={(e) => handleCommentChange(project.id, e.target.value)}
-                        placeholder="Add your comments here..."
-                      />
-                    </div>
-                  </div>
-                ))}
+                {projects.map((project, index) => renderProjectCard(project, index))}
                 <button className="previous-button" onClick={handlePreviousPage}>Previous Page</button>
               </div>
             )}
