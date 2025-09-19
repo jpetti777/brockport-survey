@@ -27,12 +27,18 @@ async function dbConnect() {
   return cached.conn;
 }
 
-// Survey Schema
+// Updated Survey Schema to handle enhanced data structure
 const surveySchema = new mongoose.Schema({
   userName: String,
   userEmail: String,
   sunyAffiliation: String,
-  selectedProjects: [Number],
+  selectedProjects: [{
+    projectId: Number,
+    cost: Number,
+    option: { type: Number, required: false }, // For Project 3 options (1 or 2)
+    optionName: { type: String, required: false } // For Project 3 option names
+  }],
+  rawSelectedProjects: [mongoose.Schema.Types.Mixed], // Backup of original format
   comments: Object,
   submittedAt: { type: Date, default: Date.now },
   location: { type: String, default: 'Brockport' }
