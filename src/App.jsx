@@ -442,79 +442,87 @@ function App() {
           <main>
             {showInstructions ? (
               <div className="instructions-page">
-                <h1>Brockport NY Forward Project Funding Survey</h1>
-                <h3>Instructions</h3>
-                <p>The Village of Brockport was awarded $4,500,000 from New York State through the NY Forward program to revitalize downtown. Several projects have been proposed for potential funding. <strong>This survey gives you the opportunity to provide feedback on which projects you think would most benefit downtown Brockport.</strong></p> 
-                <p>In this survey, you will get a budget of $4,500,000 to "spend" on the proposed projects. You can choose which projects you would fund by clicking the checkbox next to each project. A progress bar at the top of the screen will automatically sum how much money you have spent, and will indicate how much money you have remaining in your budget. You will not be able to submit the survey if you spend more than $4,500,000. You can also leave comments about the proposed projects in the box provided.</p>
+                <div className="instructions-box">
+                  <h1>Brockport NY Forward Project Funding Survey</h1>
+                  <h3>Instructions</h3>
+                  <p>The Village of Brockport was awarded $4,500,000 from New York State through the NY Forward program to revitalize downtown. Several projects have been proposed for potential funding. <strong>This survey gives you the opportunity to provide feedback on which projects you think would most benefit downtown Brockport.</strong></p> 
+                  <p>In this survey, you will get a budget of $4,500,000 to "spend" on the proposed projects. You can choose which projects you would fund by clicking the checkbox next to each project. A progress bar at the top of the screen will automatically sum how much money you have spent, and will indicate how much money you have remaining in your budget. You will not be able to submit the survey if you spend more than $4,500,000. You can also leave comments about the proposed projects in the box provided.</p>
 
-                <div className="callout-box">
-                  <strong className="important-text">Important:</strong> Please complete this survey in one sitting. It should take approximately 15 minutes to complete. Your progress will NOT be saved if you close or refresh this window before submitting the survey.
-                </div>
-
-                <h3>How We Will Use This Data</h3>
-                <p>Your responses will be shared anonymously with the Local Planning Committee, which is the group that will decide which of the proposed projects to recommend to New York State for potential funding. The next meeting of the Local Planning Committee is Tuesday, October 7th at 6:00 PM at the Parish Center at Church of Nativity of the Blessed Virgin Mary (152 Main Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://www.brockportforward.com/" target="_blank" rel="noopener noreferrer">www.brockportforward.com/</a>.</p>
-
-                <h3>Due Date</h3>
-                <p>This survey will close on Tuesday, September 30th at 11:59 PM.</p>
-
-                <div className="user-input">
-                  <div className="affiliation-question">
-                    <label>What is your affiliation, if any, with SUNY Brockport?</label>
-                    <div className="radio-options">
-                      <label className="radio-option">
-                        <input
-                          type="radio"
-                          name="sunyAffiliation"
-                          value="Student"
-                          checked={sunyAffiliation === 'Student'}
-                          onChange={(e) => setSunyAffiliation(e.target.value)}
-                        />
-                        Student
-                      </label>
-                      <label className="radio-option">
-                        <input
-                          type="radio"
-                          name="sunyAffiliation"
-                          value="Faculty"
-                          checked={sunyAffiliation === 'Faculty'}
-                          onChange={(e) => setSunyAffiliation(e.target.value)}
-                        />
-                        Faculty
-                      </label>
-                      <label className="radio-option">
-                        <input
-                          type="radio"
-                          name="sunyAffiliation"
-                          value="Staff"
-                          checked={sunyAffiliation === 'Staff'}
-                          onChange={(e) => setSunyAffiliation(e.target.value)}
-                        />
-                        Staff
-                      </label>
-                      <label className="radio-option">
-                        <input
-                          type="radio"
-                          name="sunyAffiliation"
-                          value="Not affiliated"
-                          checked={sunyAffiliation === 'Not affiliated'}
-                          onChange={(e) => setSunyAffiliation(e.target.value)}
-                        />
-                        I am not affiliated with SUNY Brockport
-                      </label>
-                    </div>
+                  <div className="callout-box">
+                    <strong className="important-text">Important:</strong> Please complete this survey in one sitting. It should take approximately 15 minutes to complete. Your progress will NOT be saved if you close or refresh this window before submitting the survey.
                   </div>
                 </div>
 
-                <p className="anonymous-note">Your responses will be anonymous. Thank you for your participation.</p>
+                <div className="content-box">
+                  <h3>How We Will Use This Data</h3>
+                  <p>Your responses will be shared anonymously with the Local Planning Committee, which is the group that will decide which of the proposed projects to recommend to New York State for potential funding. The next meeting of the Local Planning Committee is Tuesday, October 7th at 6:00 PM at the Parish Center at Church of Nativity of the Blessed Virgin Mary (152 Main Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://www.brockportforward.com/" target="_blank" rel="noopener noreferrer">www.brockportforward.com/</a>.</p>
+                </div>
 
-                <button
-                  className="next-button"
-                  onClick={handleNextPage}
-                  disabled={!sunyAffiliation}
-                >
-                  Next Page
-                </button>
-                {emailError && <p className="email-error">{emailError}</p>}
+                <div className="content-box">
+                  <h3>Due Date</h3>
+                  <p>This survey will close on Monday, September 29th at 11:59 PM.</p>
+                </div>
+
+                <div className="content-box">
+                  <div className="user-input">
+                    <div className="affiliation-question">
+                      <label>What is your affiliation, if any, with SUNY Brockport?</label>
+                      <div className="radio-options">
+                        <label className="radio-option">
+                          <input
+                            type="radio"
+                            name="sunyAffiliation"
+                            value="Student"
+                            checked={sunyAffiliation === 'Student'}
+                            onChange={(e) => setSunyAffiliation(e.target.value)}
+                          />
+                          Student
+                        </label>
+                        <label className="radio-option">
+                          <input
+                            type="radio"
+                            name="sunyAffiliation"
+                            value="Faculty"
+                            checked={sunyAffiliation === 'Faculty'}
+                            onChange={(e) => setSunyAffiliation(e.target.value)}
+                          />
+                          Faculty
+                        </label>
+                        <label className="radio-option">
+                          <input
+                            type="radio"
+                            name="sunyAffiliation"
+                            value="Staff"
+                            checked={sunyAffiliation === 'Staff'}
+                            onChange={(e) => setSunyAffiliation(e.target.value)}
+                          />
+                          Staff
+                        </label>
+                        <label className="radio-option">
+                          <input
+                            type="radio"
+                            name="sunyAffiliation"
+                            value="Not affiliated"
+                            checked={sunyAffiliation === 'Not affiliated'}
+                            onChange={(e) => setSunyAffiliation(e.target.value)}
+                          />
+                          I am not affiliated with SUNY Brockport
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="anonymous-note">Your responses will be anonymous. Thank you for your participation.</p>
+
+                  <button
+                    className="next-button"
+                    onClick={handleNextPage}
+                    disabled={!sunyAffiliation}
+                  >
+                    Next Page
+                  </button>
+                  {emailError && <p className="email-error">{emailError}</p>}
+                </div>
               </div>
             ) : (
               <div className="projects-list">
@@ -522,7 +530,7 @@ function App() {
                 <div className="bottom-buttons">
                   <button className="previous-button" onClick={handlePreviousPage}>Previous Page</button>
                   <button 
-                    className={`submit-button ${isSubmitted ? 'submitted' : ''}`}
+                    className={`bottom-submit-button ${isSubmitted ? 'submitted' : ''}`}
                     onClick={handleSubmit} 
                     disabled={remainingBudget < 0 || selectedProjects.length === 0 || isSubmitted}
                   >
