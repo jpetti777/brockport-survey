@@ -460,7 +460,7 @@ function App() {
 
                 <div className="content-box">
                   <h3>Due Date</h3>
-                  <p>This survey will close on Monday, September 29th at 11:59 PM.</p>
+                  <p>This survey will close on Tuesday, September 30th at 11:59 PM.</p>
                 </div>
 
                 <div className="content-box">
