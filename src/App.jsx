@@ -216,16 +216,12 @@ function App() {
   };
 
   const handleNextPage = () => {
-    if (userEmail.includes('@') && sunyAffiliation) {
+    if (sunyAffiliation) {
       setShowInstructions(false);
       setEmailError('');
       scrollToTop();
     } else {
-      if (!userEmail.includes('@')) {
-        setEmailError('Please enter a valid email address.');
-      } else if (!sunyAffiliation) {
-        setEmailError('Please select your SUNY Brockport affiliation.');
-      }
+      setEmailError('Please select your SUNY Brockport affiliation.');
     }
   };
 
@@ -459,22 +455,9 @@ function App() {
                 <p>Your responses will be shared anonymously with the Local Planning Committee, which is the group that will decide which of the proposed projects to recommend to New York State for potential funding. The next meeting of the Local Planning Committee is Tuesday, October 7th at 6:00 PM at the Parish Center at Church of Nativity of the Blessed Virgin Mary (152 Main Street). This meeting is open to the public, with time reserved at the end for comments. For more information, please visit: <a href="https://www.brockportforward.com/" target="_blank" rel="noopener noreferrer">www.brockportforward.com/</a>.</p>
 
                 <h3>Due Date</h3>
-                <p>This survey will close on Monday, September 29th at 11:59 PM.</p>
+                <p>This survey will close on Tuesday, September 30th at 11:59 PM.</p>
 
                 <div className="user-input">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    value={userEmail}
-                    onChange={(e) => setUserEmail(e.target.value)}
-                  />
-
                   <div className="affiliation-question">
                     <label>What is your affiliation, if any, with SUNY Brockport?</label>
                     <div className="radio-options">
@@ -522,12 +505,12 @@ function App() {
                   </div>
                 </div>
 
-                <p className="anonymous-note">Your responses will be anonymous. Your email will not be saved. We only ask for this information to prevent duplicate responses. Thank you for your participation.</p>
+                <p className="anonymous-note">Your responses will be anonymous. Thank you for your participation.</p>
 
                 <button
                   className="next-button"
                   onClick={handleNextPage}
-                  disabled={!userName || !userEmail || !sunyAffiliation}
+                  disabled={!sunyAffiliation}
                 >
                   Next Page
                 </button>
@@ -536,7 +519,16 @@ function App() {
             ) : (
               <div className="projects-list">
                 {projects.map((project, index) => renderProjectCard(project, index))}
-                <button className="previous-button" onClick={handlePreviousPage}>Previous Page</button>
+                <div className="bottom-buttons">
+                  <button className="previous-button" onClick={handlePreviousPage}>Previous Page</button>
+                  <button 
+                    className={`submit-button ${isSubmitted ? 'submitted' : ''}`}
+                    onClick={handleSubmit} 
+                    disabled={remainingBudget < 0 || selectedProjects.length === 0 || isSubmitted}
+                  >
+                    {isSubmitted ? 'Submitted' : 'Submit'}
+                  </button>
+                </div>
               </div>
             )}
           </main>
