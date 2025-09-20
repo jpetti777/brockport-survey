@@ -487,7 +487,7 @@ html, body, #root {
   display: block;
   font-size: 1rem;
   transition: all 0.3s ease;
-  width: 150px;
+  width: 180px;
 }
 
 .previous-button:hover {
@@ -500,7 +500,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   margin: 2rem auto;
 }
 
@@ -516,7 +516,7 @@ html, body, #root {
   font-size: 1rem;
   transition: all 0.3s ease;
   display: block;
-  width: 150px;
+  width: 180px;
 }
 
 .bottom-submit-button:hover:not(:disabled) {
